@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ماهگردمون مبارک</title>
+    <style>
+        /* طراحی کلی صفحه */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #333333; /* زمینه دودی */
+            color: #F5F5F5; /* متن نود */
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #87CEEB; /* رنگ آبی روشن */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.2rem;
+            text-align: center;
+            line-height: 1.8;
+            margin: 0 20px 20px;
+        }
+
+        img {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 3px solid #87CEEB;
+        }
+
+        button {
+            background-color: #444444; /* رنگ دکمه */
+            color: #87CEEB; /* متن دکمه */
+            border: 2px solid #87CEEB;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: #87CEEB;
+            color: #333333;
+        }
+
+        .hidden-message {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.5rem;
+            padding: 10px 20px;
+            background-color: #444444;
+            color: #ffffff;
+            border-radius: 10px;
+            border: 1px solid #87CEEB;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        audio {
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        /* طراحی ستاره‌ها */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: black;
+            overflow: hidden;
+        }
+
+        .stars div {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #87CEEB;
+            animation: twinkle 3s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars">
+        <!-- 20 ستاره متحرک -->
+        <div style="top: 10%; left: 15%;"></div>
+        <div style="top: 25%; left: 50%;"></div>
+        <div style="top: 40%; left: 30%;"></div>
+        <div style="top: 55%; left: 80%;"></div>
+        <div style="top: 70%; left: 10%;"></div>
+        <div style="top: 15%; left: 85%;"></div>
+        <div style="top: 35%; left: 40%;"></div>
+        <div style="top: 50%; left: 60%;"></div>
+        <div style="top: 65%; left: 20%;"></div>
+        <div style="top: 85%; left: 70%;"></div>
+    </div>
+
+    <h1>ماهگردمون مبارک 💙</h1>
+    <p>
+        امروز سه ماه از شروع داستان قشنگمون گذشته و هر روزی که کنار هم بودیم، مثل یک ستاره توی آسمون زندگیمون درخشید 💙. 
+        امااین تازه شروع ماجرای ماست و امیدوارم با عشق و لبخند ادامه پیدا کنه.
+دوست دارم؛ امضا گلی تو
+    </p>
+    <img src="https://i.postimg.cc/x1cvVm3g/IMG-9542.jpg" alt="عکس ما">
+    <button onclick="showMessage()">اینجا یه چیزی قایم کردم</button>
+    <div class="hidden-message" id="secret-message">
+        You are my lobster 💙
+    </div>
+    <audio controls>
+        <source src="https://files.catbox.moe/g2e7j6.mp3" type="audio/mpeg">
+        مرورگر شما پخش موسیقی را پشتیبانی نمی‌کند.
+    </audio>
+
+    <script>
+        function showMessage() {
+            const message = document.getElementById("secret-message");
+            message.style.display = "block"; // نمایش پیام مخفی
+        }
+
+        // کد جاوااسکریپت برای حرکت ستاره‌ها
+        const stars = document.querySelectorAll(".stars div");
+        stars.forEach(star => {
+            const randomX = Math.random() * 100 + "%";
+            const randomY = Math.random() * 100 + "%";
+            const delay = Math.random() * 3 + "s";
+
+            star.style.left = randomX;
+            star.style.top = randomY;
+            star.style.animationDelay = delay;
+        });
+    </script>
+</body>
+</html>
